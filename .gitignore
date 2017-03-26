@@ -1,0 +1,11 @@
+# Editor
+*.swp
+
+# NPM
+npm-debug.log
+node_modules
+
+# Build
+dist
+
+.tern-port
