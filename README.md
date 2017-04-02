@@ -1,9 +1,6 @@
-# react-webpack2
-Boilerplate for React built with Webpack2
-
 ## setup
 * `npm install`
-* `npm start`
+* `npm start` runs server on port 5000
 * build dist `npm run build`
 * run lint `npm run lint`
 
