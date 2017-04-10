@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FontAwesome = require('react-fontawesome');
 
 module.exports = {
   entry: {
@@ -66,6 +67,10 @@ module.exports = {
       {
         test: /\.(gif|png|jpg|jpeg)(\?[a-z0-9]+)?$/,
         loader: 'url-loader?limit=8192',
+      },
+      {
+        test: /\.(woff2?|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file-loader',
       },
     ],
   },

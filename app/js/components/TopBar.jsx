@@ -2,14 +2,13 @@ import React from 'react';
 import { ToolbarGroup, Toolbar, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
 
 const TopBar = () => (
-  <Toolbar>
+  <Toolbar style={{backgroundColor: '#64B5F6',}}>
     <ToolbarGroup className="left">
-      <img className="left" alt="Assignment Tracker" />
+      <ToolbarTitle text="Assignment Tracker" />
     </ToolbarGroup>
     <ToolbarGroup className="right">
-      <ToolbarTitle className="left" text="Monday"/>
-      <ToolbarSeparator className="center" />
-      <ToolbarTitle className="right" text="1:27"/>
+      <ToolbarTitle className="left" text="Monday" />
+      <ToolbarTitle className="right" text="1:27" />
     </ToolbarGroup>
   </Toolbar>
 );
