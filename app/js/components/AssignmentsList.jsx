@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Assignment from 'components/Assignment';
 import { Card, CardTitle } from 'material-ui/Card';
 import { Table, TableBody } from 'material-ui/Table';
+import theme from 'theme';
 
 class AssignmentsList extends Component {
   static propTypes = {
@@ -47,7 +48,7 @@ class AssignmentsList extends Component {
         <Card>
           <CardTitle
             title="Assignments due this week"
-            style={{ backgroundColor: '#868686' }}
+            style={{ backgroundColor: theme.primary3Color }}
           />
           <Table
             selectable={false}
@@ -62,7 +63,7 @@ class AssignmentsList extends Component {
         <Card>
           <CardTitle
             title="Completed assignments"
-            style={{ backgroundColor: '#868686' }}
+            style={{ backgroundColor: theme.primary3Color }}
           />
           <Table
             selectable={false}

@@ -3,6 +3,7 @@ import FlatButton from 'material-ui/FlatButton';
 import { TableRow, TableRowColumn } from 'material-ui/Table';
 import Chip from 'material-ui/Chip';
 import moment from 'moment';
+import 'css/app.css';
 
 const Assignment = ({
   title,
@@ -13,11 +14,9 @@ const Assignment = ({
 }) => (
   <TableRow key={title}>
     <TableRowColumn><strong>{title}</strong></TableRowColumn>
-    <TableRowColumn>{description}</TableRowColumn>
-    <TableRowColumn>
-      <Chip style={{ float: 'left' }}>{moment(dateDue).format('DD/MM - hh:MM a')}</Chip>
-      <FlatButton primary onTouchTap={complete} label={!completed ? 'Complete' : 'Unarchive'} style={{ float: 'right' }} />
-    </TableRowColumn>
+    <TableRowColumn className="hide">{description}</TableRowColumn>
+    <TableRowColumn className="hide"><Chip>{moment(dateDue).format('DD/MM - hh:mm a')}</Chip></TableRowColumn>
+    <TableRowColumn><FlatButton primary onTouchTap={complete} label={!completed ? 'Complete' : 'Unarchive'} /></TableRowColumn>
   </TableRow>
 );
 

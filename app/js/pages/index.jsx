@@ -6,9 +6,15 @@ import Login from 'pages/Login';
 import Layout from 'components/Layout';
 import store from 'store';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import theme from 'theme';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
+const muiTheme = getMuiTheme({
+  palette: theme,
+});
 
 export default () => (
-  <MuiThemeProvider>
+  <MuiThemeProvider muiTheme={muiTheme}>
     <Provider store={store}>
       <BrowserRouter>
         <Layout>
