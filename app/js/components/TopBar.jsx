@@ -1,8 +1,8 @@
 import React from 'react';
-import { ToolbarGroup, Toolbar, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
+import { ToolbarGroup, Toolbar, ToolbarTitle } from 'material-ui/Toolbar';
 
 const TopBar = () => (
-  <Toolbar style={{backgroundColor: '#64B5F6',}}>
+  <Toolbar style={{ backgroundColor: '#64B5F6' }}>
     <ToolbarGroup className="left">
       <ToolbarTitle text="Assignment Tracker" />
     </ToolbarGroup>
