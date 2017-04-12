@@ -1,8 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Assignment from 'components/Assignment';
-import { Card, CardTitle } from 'material-ui/Card';
-import { Table, TableBody } from 'material-ui/Table';
-import theme from 'theme';
+import AssignmentCard from 'components/AssignmentCard';
 
 class AssignmentsList extends Component {
   static propTypes = {
@@ -12,6 +10,7 @@ class AssignmentsList extends Component {
       description: PropTypes.string,
       dateDue: PropTypes.string,
     })).isRequired,
+    editModal: PropTypes.func.isRequired,
     update: PropTypes.func.isRequired,
   };
 
@@ -28,7 +27,8 @@ class AssignmentsList extends Component {
     <Assignment
       {...a}
       key={a.id}
-      complete={() => this.completeAssignment(a.id, a)}
+      editModal={() => this.props.editModal(a.id)}
+      complete={(e) => { e.stopPropagation(); this.completeAssignment(a.id, a); }}
     />
   ));
 
@@ -38,43 +38,20 @@ class AssignmentsList extends Component {
     <Assignment
       {...a}
       key={a.id}
-      complete={() => this.completeAssignment(a.id, a, false)}
+      editModal={() => this.props.editModal(a.id)}
+      complete={(e) => { e.stopPropagation(); this.completeAssignment(a.id, a, false); }}
     />
   ));
 
   render() {
     return (
       <div>
-        <Card>
-          <CardTitle
-            title="Assignments due this week"
-            style={{ backgroundColor: theme.primary3Color }}
-          />
-          <Table
-            selectable={false}
-          >
-            <TableBody
-              displayRowCheckbox={false}
-            >
-              {this.renderThisWeeksAssignments()}
-            </TableBody>
-          </Table>
-        </Card>
-        <Card>
-          <CardTitle
-            title="Completed assignments"
-            style={{ backgroundColor: theme.primary3Color }}
-          />
-          <Table
-            selectable={false}
-          >
-            <TableBody
-              displayRowCheckbox={false}
-            >
-              {this.renderCompletedAssignments()}
-            </TableBody>
-          </Table>
-        </Card>
+        <AssignmentCard title="Assignments due this week">
+          {this.renderThisWeeksAssignments()}
+        </AssignmentCard>
+        <AssignmentCard title="Completed assignments">
+          {this.renderCompletedAssignments()}
+        </AssignmentCard>
       </div>
     );
   }

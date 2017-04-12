@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import AssignmentsList from 'components/AssignmentsList';
-import { createAssignment, updateAssignment, destroyAssignment } from 'actions/assignments';
+import { updateAssignment } from 'actions/assignments';
+import { showAssignmentModal } from 'actions/modal';
 
 function mapStateToProps(store) {
   return {
@@ -10,9 +11,8 @@ function mapStateToProps(store) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    create: assignment => dispatch(createAssignment(assignment)),
     update: (id, assignment) => dispatch(updateAssignment(id, assignment)),
-    destory: id => dispatch(destroyAssignment(id)),
+    editModal: id => dispatch(showAssignmentModal(id)),
   };
 }
 
