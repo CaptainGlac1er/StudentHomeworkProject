@@ -7,7 +7,7 @@ import {
 export default function login(state = null, action) {
   switch (action.type) {
     case LOGIN_USER:
-      return action.payload
+      return action.payload;
     case LOGOUT_USER:
       return null;
     default:

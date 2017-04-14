@@ -1,12 +1,12 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { ToolbarGroup, Toolbar } from 'material-ui/Toolbar';
 import TextField from 'material-ui/TextField';
 import IconButton from 'material-ui/IconButton';
-import Chip from 'material-ui/Chip';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import theme from 'theme';
-import User from 'containers/User'
+import User from 'containers/User';
+
 const SubBar = () => (
   <Toolbar style={{ backgroundColor: theme.primary2Color }}>
     <ToolbarGroup>

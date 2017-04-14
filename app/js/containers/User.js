@@ -4,7 +4,7 @@ import { loginUser, logoutUser } from 'actions/login';
 
 function mapStateToProps(store) {
   return {
-    user: store.user,
+    user: store.user || '',
   };
 }
 
