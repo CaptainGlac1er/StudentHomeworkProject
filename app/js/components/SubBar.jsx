@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { ToolbarGroup, Toolbar } from 'material-ui/Toolbar';
 import TextField from 'material-ui/TextField';
 import IconButton from 'material-ui/IconButton';
+import Chip from 'material-ui/Chip';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import theme from 'theme';
-
+import User from 'containers/User'
 const SubBar = () => (
   <Toolbar style={{ backgroundColor: theme.primary2Color }}>
     <ToolbarGroup>
@@ -15,6 +16,7 @@ const SubBar = () => (
       <TextField hintText="Search Text" />
     </ToolbarGroup>
     <ToolbarGroup>
+      <User />
       <IconMenu
         iconButtonElement={<IconButton iconClassName="fa fa-user fa-2x" />}
       >
@@ -24,5 +26,4 @@ const SubBar = () => (
     </ToolbarGroup>
   </Toolbar>
 );
-
 export default SubBar;
