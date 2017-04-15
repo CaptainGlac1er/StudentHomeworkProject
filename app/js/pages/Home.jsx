@@ -5,7 +5,7 @@ import AssignmentModal from 'containers/AssignmentModal';
 const Home = () => (
   <div>
     <AssignmentsList />
-    <AssignmentModal action="Update" title="Update Assignment" />
+    <AssignmentModal />
   </div>
 );
 

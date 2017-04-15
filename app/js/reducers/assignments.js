@@ -39,7 +39,10 @@ export default function assignments(state = defaultState, action) {
     case UPDATE_ASSIGNMENT:
       return state.map((a) => {
         if (a.id !== action.payload.id) return a;
-        return action.payload.assignment;
+        return {
+          ...a,
+          ...action.payload.assignment,
+        };
       });
     case DESTROY_ASSIGNMENT:
       return state.filter(a => a.id !== action.payload);
