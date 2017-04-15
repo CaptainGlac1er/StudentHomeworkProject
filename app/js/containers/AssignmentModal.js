@@ -5,6 +5,9 @@ import { createAssignment, updateAssignment, destroyAssignment } from 'actions/a
 
 function mapStateToProps(store) {
   return {
+    assignment: store.modal.modalType === ASSIGNMENT_MODAL ?
+    store.assignments.find(a => store.modal.id === a.id) :
+    null,
     opened: store.modal.modalType === ASSIGNMENT_MODAL,
   };
 }
