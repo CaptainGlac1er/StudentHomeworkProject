@@ -1,7 +1,8 @@
 import React from 'react';
+import User from 'containers/User';
 
 const Login = () => (
-  <div>Login</div>
+  <User />
 );
 
 export default Login;
