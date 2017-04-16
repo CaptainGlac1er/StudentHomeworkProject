@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
-import modal from './modal';
-import assignments from './assignments';
 import user from './user';
+import modal from './modal';
+import filter from './filter';
+import assignments from './assignments';
 
 export default combineReducers({
-  modal,
   user,
+  modal,
+  filter,
   assignments,
 });

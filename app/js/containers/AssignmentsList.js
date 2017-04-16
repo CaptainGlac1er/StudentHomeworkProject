@@ -5,7 +5,10 @@ import { showAssignmentModal } from 'actions/modal';
 
 function mapStateToProps(store) {
   return {
-    assignments: store.assignments,
+    assignments: store.assignments.filter((a) => {
+      return a.title.toLowerCase().indexOf(store.filter.toLowerCase()) !== -1 ||
+        a.description.toLowerCase().indexOf(store.filter.toLowerCase()) !== -1;
+    }),
   };
 }
 
