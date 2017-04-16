@@ -17,12 +17,12 @@ class Header extends Component {
 
   updateTime() {
     this.setState({
-        title: moment().format('ddd, M/D, h:mma'),
+      title: moment().format('ddd, M/D, h:mma'),
     });
     this.timer = setTimeout(() => {
       this.updateTime();
     }, 1000);
-  };
+  }
 
   render() {
     return (
