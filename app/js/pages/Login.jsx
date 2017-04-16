@@ -18,7 +18,7 @@ class Login extends Component {
     super(props);
     this.state = {
       login: { username: '', password: '' },
-      registration: { username: '', password: '', secpassword: '' }
+      registration: { username: '', password: '', secpassword: '' },
     };
     this.handleLoginChange = this.handleLoginChange.bind(this);
     this.handleRegistrationChange = this.handleRegistrationChange.bind(this);
