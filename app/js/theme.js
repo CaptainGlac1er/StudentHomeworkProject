@@ -1,23 +1,14 @@
-import {
-  cyan300,
-  grey100,
-  grey500,
-  grey700,
-  blue500,
-  blue300,
-  darkBlack,
-  white,
-} from 'material-ui/styles/colors';
+import * as colors from 'material-ui/styles/colors';
 
 export default {
-  primary1Color: blue500,
-  primary2Color: blue300,
-  primary3Color: grey500,
+  primary1Color: colors.blue500,
+  primary2Color: colors.blue300,
+  primary3Color: colors.grey50,
 
-  accent1Color: cyan300,
-  accent2Color: grey100,
-  accent3Color: grey700,
+  accent1Color: colors.cyan300,
+  accent2Color: colors.grey100,
+  accent3Color: colors.grey700,
 
-  textColor: darkBlack,
-  alternateTextColor: white,
+  textColor: colors.black,
+  alternateTextColor: colors.white,
 };
