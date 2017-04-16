@@ -8,7 +8,7 @@ class CheckAuth extends Component {
     user: PropTypes.string.isRequired,
   };
   checkAuthSwitch = () => {
-    if (this.props.user !== null) {
+    if (this.props.user !== '') {
       return (
         <Layout>
           <Home />

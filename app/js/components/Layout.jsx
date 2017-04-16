@@ -7,7 +7,7 @@ const Layout = ({ children }) => (
   <div>
     <Header />
 
-    {/*TODO Remove TopBar & SubBar (Replaced by Header)*/}
+    {/* TODO Remove TopBar & SubBar (Replaced by Header)*/}
     <TopBar />
     <SubBar />
 
