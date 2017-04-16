@@ -8,11 +8,11 @@ function getDebugSessionKey() {
 }
 
 const store = createStore(
-    rootReducer,
-    compose(
-      persistState(getDebugSessionKey()),
-      window.devToolsExtension ? window.devToolsExtension() : f => f
-    ),
+  rootReducer,
+  compose(
+    persistState(getDebugSessionKey()),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  ),
 );
 
 if (module.hot) {
