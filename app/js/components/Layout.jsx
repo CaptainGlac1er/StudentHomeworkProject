@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './Header';
-import SubBar from './SubBar';
-import Footer from './Footer';
+import Header from 'components/Header';
+import SubBar from 'components/SubBar';
+import Footer from 'containers/Footer';
 
 const styleContainer = {
   height: '100vh',

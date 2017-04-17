@@ -9,6 +9,7 @@ function mapStateToProps(store) {
       return a.title.toLowerCase().indexOf(store.filter.toLowerCase()) !== -1 ||
         a.description.toLowerCase().indexOf(store.filter.toLowerCase()) !== -1;
     }),
+    page: store.pages,
   };
 }
 

@@ -7,6 +7,7 @@ class CheckAuth extends Component {
   static propTypes = {
     user: PropTypes.string.isRequired,
   };
+
   checkAuthSwitch = () => {
     if (this.props.user !== '') {
       return (
@@ -19,6 +20,7 @@ class CheckAuth extends Component {
       <Login />
     );
   }
+
   render() {
     return (
       <div>
@@ -26,6 +28,6 @@ class CheckAuth extends Component {
       </div>
     );
   }
-
 }
+
 export default CheckAuth;
