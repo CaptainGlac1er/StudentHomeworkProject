@@ -6,6 +6,7 @@ import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import theme from 'theme';
 import User from 'containers/User';
+import NotificationsIconContainer from 'containers/NotificationsIconContainer';
 
 const SubBar = () => (
   <Toolbar style={{ backgroundColor: theme.primary2Color }}>
@@ -14,6 +15,9 @@ const SubBar = () => (
     </ToolbarGroup>
     <ToolbarGroup>
       <TextField hintText="Search Text" />
+    </ToolbarGroup>
+    <ToolbarGroup>
+      <NotificationsIconContainer />
     </ToolbarGroup>
     <ToolbarGroup>
       <User />
