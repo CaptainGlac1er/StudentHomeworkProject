@@ -22,9 +22,6 @@ const Layout = ({ children }) => (
   <div style={styleContainer}>
     <div style={styleSectionStatic}>
       <Header />
-
-      {/* TODO Remove TopBar & SubBar (Replaced by Header) */}
-      {/* <TopBar /> */}
       <SubBar />
     </div>
 

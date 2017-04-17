@@ -6,7 +6,7 @@ class Header extends Component {
   static timer = null;
 
   state = {
-    page: 1,
+    page: 0,
   };
 
   setPage(page) {
@@ -17,19 +17,14 @@ class Header extends Component {
     return (
       <BottomNavigation selectedIndex={this.state.page}>
         <BottomNavigationItem
-          label="Classes"
-          icon={<FontIcon className="material-icons">schedule</FontIcon>}
-          onTouchTap={() => this.setPage(0)}
-        />
-        <BottomNavigationItem
           label="Assignments"
           icon={<FontIcon className="material-icons">assignment</FontIcon>}
-          onTouchTap={() => this.setPage(1)}
+          onTouchTap={() => this.setPage(0)}
         />
         <BottomNavigationItem
           label="Archive"
           icon={<FontIcon className="material-icons">archive</FontIcon>}
-          onTouchTap={() => this.setPage(2)}
+          onTouchTap={() => this.setPage(1)}
         />
       </BottomNavigation>
     );

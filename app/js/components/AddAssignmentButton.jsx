@@ -6,6 +6,7 @@ const style = {
   position: 'fixed',
   bottom: '15px',
   right: '15px',
+  zIndex: '100',
 };
 
 const AddAssignmentButton = ({ openModal }) => (
