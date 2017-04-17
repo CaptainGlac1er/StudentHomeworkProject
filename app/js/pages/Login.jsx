@@ -13,6 +13,7 @@ const style = {
 class Login extends Component {
   static propTypes = {
     login: PropTypes.func.isRequired,
+    register: PropTypes.func.isRequired,
   }
   constructor(props) {
     super(props);
@@ -23,6 +24,7 @@ class Login extends Component {
     this.handleLoginChange = this.handleLoginChange.bind(this);
     this.handleRegistrationChange = this.handleRegistrationChange.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
+    this.handleRegistration = this.handleRegistration.bind(this);
     this.tabOne = this.tabOne.bind(this);
   }
   handleLoginChange(event) {
@@ -40,6 +42,13 @@ class Login extends Component {
   handleLogin() {
     if (typeof (this.state.login && this.state.login.username) !== 'undefined') {
       this.props.login(this.state.login.username);
+    }
+  }
+  handleRegistration() {
+    if (typeof (this.state.registration && this.state.registration.username && this.state.registration.password && this.state.registration.secpassword) !== 'undefined') {
+      if (this.state.registration.password === this.state.registration.secpassword) {
+        this.props.register(this.state.registration.username);
+      }
     }
   }
   tabOne = () => (
@@ -74,6 +83,7 @@ class Login extends Component {
       />
       <br />
       <TextField
+        name="password"
         hintText=""
         type="password"
         floatingLabelText="password"
@@ -81,6 +91,7 @@ class Login extends Component {
       />
       <br />
       <TextField
+        name="secpassword"
         hintText=""
         type="password"
         floatingLabelText="re-enter password"
@@ -88,7 +99,7 @@ class Login extends Component {
 
       />
       <br />
-      <FlatButton primary label="Register" />
+      <FlatButton primary label="Register" onClick={this.handleRegistration} />
     </Paper>
 
   )

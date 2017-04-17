@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Login from 'pages/Login';
-import { loginUser } from 'actions/login';
+import { loginUser, registerUser } from 'actions/login';
 
 function mapStateToProps(store) {
   return {
@@ -11,6 +11,7 @@ function mapStateToProps(store) {
 function mapDispatchToProps(dispatch) {
   return {
     login: username => dispatch(loginUser(username)),
+    register: username => dispatch(registerUser(username)),
   };
 }
 
