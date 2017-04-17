@@ -28,7 +28,6 @@ class Header extends Component {
     return (
       <AppBar
         title={this.state.title}
-        iconClassNameRight=""
       />
     );
   }
