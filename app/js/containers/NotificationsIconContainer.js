@@ -4,13 +4,13 @@ import { toggleNotifications } from 'actions/notifications';
 
 function mapStateToProps(store) {
   return {
-    notifications: store.notifications || true,
+    notifications: store.notifications,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    toggle: id => dispatch(toggleNotifications(id)),
+    toggle: () => dispatch(toggleNotifications()),
   };
 }
 
