@@ -51,6 +51,15 @@ class Login extends Component {
       }
     }
   }
+  handleLoginKeyPress = (event) => {
+    switch (event.keyCode || event.which) {
+      case 13:
+        this.handleLogin();
+        break;
+      default:
+        break;
+    }
+  }
   tabOne = () => (
     <Paper style={style}>
       <TextField
@@ -66,6 +75,7 @@ class Login extends Component {
         type="password"
         floatingLabelText="password"
         onChange={this.handleInputChange}
+        onKeyPress={this.handleLoginKeyPress}
       />
       <br />
       <FlatButton primary label="Log in" onClick={this.handleLogin} />
