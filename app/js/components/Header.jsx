@@ -27,6 +27,7 @@ class Header extends Component {
   render() {
     return (
       <AppBar
+        iconElementLeft={<img src={'./img/icon.png'} style={{ height: '48px', width: '48px' }} alt={'Icon'} />}
         title={this.state.title}
       />
     );
