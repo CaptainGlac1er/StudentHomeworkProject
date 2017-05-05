@@ -21,7 +21,12 @@ class AssignmentModal extends Component {
   };
 
   static defaultProps = {
-    assignment: {},
+    assignment: {
+      id: 0,
+      title: '',
+      description: '',
+      dateDue: '',
+    },
   };
 
   handleChange = (field, e, value) => {
@@ -38,6 +43,7 @@ class AssignmentModal extends Component {
       updateAssignment,
       createAssignment,
     } = this.props;
+
     const dueDate = moment(this.assignment.dueDate);
     const dueTime = moment(this.assignment.dueTime);
 
