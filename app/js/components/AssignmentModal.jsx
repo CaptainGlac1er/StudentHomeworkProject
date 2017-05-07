@@ -26,8 +26,8 @@ class AssignmentModal extends Component {
       id: 0,
       title: '',
       description: '',
-      dateDue: new Date(),
-      dueTime: new Date(),
+      dateDue: null,
+      dueTime: null,
     },
   };
 
@@ -46,8 +46,16 @@ class AssignmentModal extends Component {
       createAssignment,
     } = this.props;
 
-    const dueDate = moment(this.assignment.dueDate);
-    const dueTime = moment(this.assignment.dueTime);
+    let dueDate;
+    let dueTime;
+
+    if (this.assignment.dueDate === null || this.assignment.dueTime === null) {
+      dueDate = moment();
+      dueTime = moment();
+    } else {
+      dueDate = moment(this.assignment.dueDate);
+      dueTime = moment(this.assignment.dueTime);
+    }
 
     dueDate.set('hours', dueTime.hours());
     dueDate.set('minutes', dueTime.minutes());
