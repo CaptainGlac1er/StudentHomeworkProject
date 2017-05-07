@@ -11,7 +11,7 @@ export function loginUser(user) {
 }
 
 export function logoutUser() {
-  window.sessionStorage.setItem('auth', null);
+  window.sessionStorage.removeItem('auth');
   return {
     type: LOGOUT_USER,
   };
