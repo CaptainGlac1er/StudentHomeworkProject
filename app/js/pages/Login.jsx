@@ -42,7 +42,6 @@ class Login extends Component {
   }
   handleLogin() {
     if (typeof (this.state.login && this.state.login.username) !== 'undefined') {
-      this.state.SnackMessage = `Welcome ${this.state.login.username}`;
       this.props.login(this.state.login.username);
       this.props.snackbarMessageEdit(`Login succeded ${this.state.login.username}`);
     }
