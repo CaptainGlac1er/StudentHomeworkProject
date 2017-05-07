@@ -5,6 +5,7 @@ import modal from './modal';
 import filter from './filter';
 import assignments from './assignments';
 import notifications from './notifications';
+import snackbarMessage from './snackbarMessage';
 
 export default combineReducers({
   user,
@@ -13,4 +14,5 @@ export default combineReducers({
   filter,
   assignments,
   notifications,
+  snackbarMessage,
 });

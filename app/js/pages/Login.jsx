@@ -14,6 +14,7 @@ class Login extends Component {
   static propTypes = {
     login: PropTypes.func.isRequired,
     register: PropTypes.func.isRequired,
+    snackbarMessageEdit: PropTypes.func.isRequired,
   }
   constructor(props) {
     super(props);
@@ -41,13 +42,17 @@ class Login extends Component {
   }
   handleLogin() {
     if (typeof (this.state.login && this.state.login.username) !== 'undefined') {
+      this.state.SnackMessage = `Welcome ${this.state.login.username}`;
       this.props.login(this.state.login.username);
+      this.props.snackbarMessageEdit(`Login succeded ${this.state.login.username}`);
     }
   }
   handleRegistration() {
     if (typeof (this.state.registration && this.state.registration.username && this.state.registration.password && this.state.registration.secpassword) !== 'undefined') {
       if (this.state.registration.password === this.state.registration.secpassword) {
         this.props.register(this.state.registration.username);
+      } else {
+        this.props.snackbarMessageEdit('Passwords don\'t match');
       }
     }
   }
@@ -59,6 +64,9 @@ class Login extends Component {
       default:
         break;
     }
+  }
+  loginMessageHide = () => {
+    this.state.loginMessage = '';
   }
   tabOne = () => (
     <Paper style={style}>
@@ -136,6 +144,7 @@ class Login extends Component {
           </Tabs>
         </div>
       </div>
+
     );
   }
 }

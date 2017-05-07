@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import AssignmentModal from 'components/AssignmentModal';
 import { hideModal, ASSIGNMENT_MODAL } from 'actions/modal';
 import { createAssignment, updateAssignment, destroyAssignment } from 'actions/assignments';
+import { updateMessage } from 'actions/snackbarMessage';
 
 function mapStateToProps(store) {
   return {
@@ -16,6 +17,7 @@ function mapDispatchToProps(dispatch) {
     createAssignment: assignment => dispatch(createAssignment(assignment)),
     updateAssignment: (id, assignment) => dispatch(updateAssignment(id, assignment)),
     delete: id => dispatch(destroyAssignment(id)),
+    snackbarMessageEdit: message => dispatch(updateMessage(message)),
   };
 }
 

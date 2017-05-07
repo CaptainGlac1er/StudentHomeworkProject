@@ -14,9 +14,11 @@ class AssignmentsList extends Component {
     editModal: PropTypes.func.isRequired,
     update: PropTypes.func.isRequired,
     page: PropTypes.number.isRequired,
+    snackbarMessageEdit: PropTypes.func.isRequired,
   };
 
   completeAssignment = (id, assignment, completed = true) => {
+    this.props.snackbarMessageEdit(`Assigment ${(completed) ? 'completed' : 'unarchived'}`);
     this.props.update(id, {
       ...assignment,
       completed,

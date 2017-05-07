@@ -10,7 +10,7 @@ function mapStateToProps(store) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    login: username => dispatch(loginUser(username)),
+    login: (username, message) => dispatch(loginUser(username, message)),
     logout: () => dispatch(logoutUser()),
     registerUser: username => dispatch(registerUser(username)),
   };
