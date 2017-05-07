@@ -25,7 +25,7 @@ class AssignmentModal extends Component {
     assignment: {
       id: 0,
       title: '',
-      description: 'test',
+      description: '',
       dateDue: new Date(),
       dueTime: new Date(),
     },
