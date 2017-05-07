@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import NotificationsIcon from 'components/NotificationsIcon';
 import { toggleNotifications } from 'actions/notifications';
+import { updateMessage } from 'actions/snackbarMessage';
 
 function mapStateToProps(store) {
   return {
@@ -11,6 +12,7 @@ function mapStateToProps(store) {
 function mapDispatchToProps(dispatch) {
   return {
     toggle: () => dispatch(toggleNotifications()),
+    snackbarMessageEdit: message => dispatch(updateMessage(message)),
   };
 }
 
