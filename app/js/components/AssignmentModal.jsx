@@ -48,8 +48,10 @@ class AssignmentModal extends Component {
 
     const dueDate = moment(this.assignment.dueDate);
     const dueTime = moment(this.assignment.dueTime);
+
     dueDate.set('hours', dueTime.hours());
     dueDate.set('minutes', dueTime.minutes());
+
     const newAssignment = {
       title: this.assignment.title,
       description: this.assignment.description,

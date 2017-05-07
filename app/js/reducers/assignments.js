@@ -22,8 +22,8 @@ const defaultState = [
   },
 ];
 
-const getId = items => items.reduce((prev, curr) => {
-  return prev < curr ? curr : prev;
+const getId = items => items.reduce((prev, { id }) => {
+  return prev < id ? id : prev;
 }, 0);
 
 export default function assignments(state = defaultState, action) {
@@ -33,7 +33,7 @@ export default function assignments(state = defaultState, action) {
         ...state,
         {
           ...action.payload,
-          id: getId(state),
+          id: getId(state) + 1,
         },
       ];
     case UPDATE_ASSIGNMENT:
