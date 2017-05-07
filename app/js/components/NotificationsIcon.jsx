@@ -6,11 +6,18 @@ class NotificationsIcon extends Component {
   static propTypes = {
     notifications: PropTypes.bool.isRequired,
     toggle: PropTypes.func.isRequired,
+    snackbarMessageEdit: PropTypes.func.isRequired,
   };
+
+
+  toggleNotification = () => {
+    this.props.toggle();
+    this.props.snackbarMessageEdit(`Notifications ${(this.props.notifications) ? 'on' : 'off'}`);
+  }
 
   renderNotificationsIcon = () => {
     return (
-      <IconButton iconClassName={this.props.notifications ? 'fa fa-bell-o' : 'fa fa-bell-slash-o'} onClick={this.props.toggle} />
+      <IconButton iconClassName={this.props.notifications ? 'fa fa-bell-o' : 'fa fa-bell-slash-o'} onClick={this.toggleNotification} />
     );
   }
 
