@@ -18,14 +18,16 @@ class AssignmentModal extends Component {
     createAssignment: PropTypes.func.isRequired,
     updateAssignment: PropTypes.func.isRequired,
     opened: PropTypes.bool.isRequired,
+    snackbarMessageEdit: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
     assignment: {
       id: 0,
       title: '',
-      description: '',
+      description: 'test',
       dateDue: '',
+      dueTime: '',
     },
   };
 
@@ -46,21 +48,22 @@ class AssignmentModal extends Component {
 
     const dueDate = moment(this.assignment.dueDate);
     const dueTime = moment(this.assignment.dueTime);
-
     dueDate.set('hours', dueTime.hours());
     dueDate.set('minutes', dueTime.minutes());
-
     const newAssignment = {
       title: this.assignment.title,
       description: this.assignment.description,
       dateDue: dueDate.toISOString(),
+      completed: false,
     };
 
     close();
 
     if (assignment.id) {
+      this.props.snackbarMessageEdit('Assigment updated');
       return updateAssignment(assignment.id, newAssignment);
     }
+    this.props.snackbarMessageEdit('Assigment created');
     return createAssignment(newAssignment);
   }
 
