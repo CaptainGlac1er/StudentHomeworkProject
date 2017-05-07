@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from 'components/Header';
+import Header from 'containers/Header';
 import SubBar from 'components/SubBar';
 import Footer from 'containers/Footer';
 import theme from 'theme';

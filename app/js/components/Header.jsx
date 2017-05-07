@@ -1,9 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import AppBar from 'material-ui/AppBar';
 import moment from 'moment';
+import IconMenu from 'material-ui/IconMenu';
+import MenuItem from 'material-ui/MenuItem';
+import FontIcon from 'material-ui/FontIcon';
 
 class Header extends Component {
   static timer = null;
+
+  static propTypes = {
+    logout: PropTypes.func.isRequired,
+  };
 
   state = {};
 
@@ -29,7 +36,15 @@ class Header extends Component {
       <AppBar
         iconElementLeft={<i className="fa fa-2x fa-book" style={{ marginTop: '7.5px' }} aria-hidden="true" />}
         title={this.state.title}
-        iconElementRight={<i />}
+        iconElementRight={<IconMenu
+          iconButtonElement={
+            <FontIcon className="fa fa-2x fa-user" style={{ marginTop: '7.5px' }} aria-hidden="true" />
+          }
+          targetOrigin={{ horizontal: 'right', vertical: 'top' }}
+          anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
+        >
+          <MenuItem primaryText="Sign out" onClick={this.props.logout} />
+        </IconMenu>}
       />
     );
   }
