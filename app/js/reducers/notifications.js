@@ -7,6 +7,6 @@ export default function notifications(state = initState, action) {
     case TOGGLE_NOTIFICATIONS:
       return !state;
     default:
-      return initState;
+      return state;
   }
 }
