@@ -8,17 +8,24 @@ import moment from 'moment';
 const defaultState = [
   {
     id: 1,
-    title: '444 Demo',
-    description: 'Create a web app for this class',
+    title: '444 Presentation',
+    description: 'Create final presentation for 444',
     dateDue: moment().toISOString(),
     completed: false,
   },
   {
     id: 2,
-    title: '440 Project',
-    description: 'Create the design document',
-    dateDue: moment().toISOString(),
+    title: 'Study for final 444',
+    description: 'Review course material for 444',
+    dateDue: moment().add(5, 'day').toISOString(),
     completed: false,
+  },
+  {
+    id: 3,
+    title: '444 User testing',
+    description: 'Gather user feed back on 444 project',
+    dateDue: moment().subtract(4, 'day').toISOString(),
+    completed: true,
   },
 ];
 
