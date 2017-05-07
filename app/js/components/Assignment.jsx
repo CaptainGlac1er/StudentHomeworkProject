@@ -12,7 +12,7 @@ const Assignment = ({
   completed,
   description,
 }) => (
-  <TableRow key={title} onTouchTap={editModal}>
+  <TableRow hoverable className="hover" key={title} onTouchTap={editModal}>
     <TableRowColumn>{moment(dateDue).format('hh:mm a - ddd')}</TableRowColumn>
     <TableRowColumn><strong>{title}</strong></TableRowColumn>
     <TableRowColumn className="hide">{description}</TableRowColumn>
