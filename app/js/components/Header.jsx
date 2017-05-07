@@ -3,7 +3,7 @@ import AppBar from 'material-ui/AppBar';
 import moment from 'moment';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
-import FontIcon from 'material-ui/FontIcon';
+import IconButton from 'material-ui/IconButton';
 
 class Header extends Component {
   static timer = null;
@@ -38,7 +38,7 @@ class Header extends Component {
         title={this.state.title}
         iconElementRight={<IconMenu
           iconButtonElement={
-            <FontIcon className="fa fa-2x fa-user" style={{ marginTop: '7.5px' }} aria-hidden="true" />
+            <IconButton iconClassName="fa fa-2x fa-user-circle-o" iconStyle={{ color: 'black' }} />
           }
           targetOrigin={{ horizontal: 'right', vertical: 'top' }}
           anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
