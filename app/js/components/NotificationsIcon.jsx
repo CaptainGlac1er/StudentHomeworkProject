@@ -11,8 +11,8 @@ class NotificationsIcon extends Component {
 
 
   toggleNotification = () => {
-    this.props.toggle();
     this.props.snackbarMessageEdit(`Notifications ${(this.props.notifications) ? 'on' : 'off'}`);
+    this.props.toggle();
   }
 
   renderNotificationsIcon = () => {
