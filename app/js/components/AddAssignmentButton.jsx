@@ -3,7 +3,7 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
 const style = {
-  position: 'fixed',
+  position: 'absolute',
   bottom: '15px',
   right: '15px',
   zIndex: '100',

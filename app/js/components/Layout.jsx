@@ -2,6 +2,7 @@ import React from 'react';
 import Header from 'components/Header';
 import SubBar from 'components/SubBar';
 import Footer from 'containers/Footer';
+import theme from 'theme';
 
 const styleContainer = {
   height: '100vh',
@@ -12,6 +13,8 @@ const styleContainer = {
 const styleSectionDynamic = {
   flex: '1 1 100%',
   overflowY: 'auto',
+  position: 'relative',
+  backgroundColor: theme.primary3Color,
 };
 
 const styleSectionStatic = {
