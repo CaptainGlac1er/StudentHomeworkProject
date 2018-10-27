@@ -57,7 +57,7 @@
     "style-loader": "0.13.2",
     "url-loader": "1.1.2",
     "webpack": "2.7.0",
-    "webpack-bundle-analyzer": "2.13.1",
+    "webpack-bundle-analyzer": "3.0.3",
     "webpack-dev-server": "2.11.3"
   }
 }
